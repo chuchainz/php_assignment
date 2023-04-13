@@ -19,12 +19,12 @@ function validate() {
   for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
 
-    if (element.type === "text" || element.type == "textarea" || element.type == "password" || element.type == "email") {
-      if (element.value.trim() == "") {
+    if (element.type === "text" || element.type === "textarea" || element.type === "password" || element.type === "email") {
+      if (element.value.trim() === "") {
         missinginfo.push(element.name);
         valid = false;
       }
-    } else if (element.type == "radio" || element.type == "checkbox") {
+    } else if (element.type === "radio" || element.type === "checkbox") {
       const radioGroup = document.getElementsByName(element.name);
 
       if (radioGroup.length > 0) {
@@ -38,7 +38,7 @@ function validate() {
         }
 
         if (!isChecked) {
-          if (element.name == "gender") {
+          if (element.name === "gender") {
             if (!missinginfo.includes(element.name)) {
               missinginfo.push(element.name);
             }
